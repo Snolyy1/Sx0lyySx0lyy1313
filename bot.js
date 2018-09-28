@@ -9,14 +9,14 @@ const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
 const prefix = '^';
 
 client.on('message', message => {
-	if(message.content.startsWith(prefix + 'Quran')) {
+	if(message.content.startsWith(prefix + 'Q')) {
 		message.delete();
     const voiceChannel = message.member.voiceChannel;
     if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي**`);
 
 	let embed = new Discord.RichEmbed()
     .setAuthor(`${message.author.tag}`, message.author.avatarURL)
-	.setColor('#000000')
+	.setColor('#ffffff')
 	.setFooter("بوت القرآن | صدقة جارية للجميع", 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiqVT5PZAfcy8qZxlr3SQv3mmCw9zPiu2YBLIQ4bBePL2jLm7h')
       .setDescription(` 
      🕋 اوامر بوت القرآن الكريم 🕋
