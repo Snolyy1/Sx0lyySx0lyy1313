@@ -9,7 +9,7 @@ const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
 const prefix = '^';
 
 client.on('message', message => {
-	if(message.content.startsWith(prefix + 'Q')) {
+	if(message.content.startsWith(prefix + 'Quran')) {
 		message.delete();
     const voiceChannel = message.member.voiceChannel;
     if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي**`);
@@ -173,5 +173,19 @@ collector7.on('collect', r => {
 })
 }
 });
+  client.on('message', message => {
+  if (!message.guild) return;
 
+  if (message.content === 'ادخل') {
+    if (message.member.voiceChannel) {
+      message.member.voiceChannel.join()
+        .then(connection => { 
+          message.reply('لقد دخلت الروم بنجاح !');
+        })
+        .catch(console.log);
+    } else {
+      message.reply('يجب ان تكون في روم صوتي');
+    }
+  }
+});
 client.login(process.env.BOT_TOKEN);
